@@ -28,10 +28,6 @@ class App extends Component {
     this.setState({newAuthor: e.target.value});
   }
 
-  handleOnSubmit = () => {
-    this.addBook();
-  }
-
 
   addBook = () => {
     const newBook = {
@@ -66,6 +62,9 @@ class App extends Component {
             <label>ISBN: </label><TextBox value={this.state.newISBN} change={this.handleChangeNewBookISBN} />
             <label>Title: </label><TextBox value={this.state.newTitle} change={this.handleChangeNewBookTitle} />
             <label>Author: </label><TextBox value={this.state.newAuthor} change={this.handleChangeNewBookAuthor} />
+          </div>
+          <div>
+            <button onClick={this.addBook}>Add Book</button>
           </div>
         </div>
         <div>
