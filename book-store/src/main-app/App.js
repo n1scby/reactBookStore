@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './App.css';
 
-import initialBooks from './data/books';
-import TextBox from './components/text-box';
-import BookList from './components/book-list';
+import '../components/book-list.css';
+import '../components/text-box.css';
+
+import initialBooks from '../data/books';
+import TextBox from '../components/text-box';
+import BookList from '../components/book-list';
 
 class App extends Component {
   
@@ -51,12 +54,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+        <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to the Book Store</h1>
         </header>
-        <div>
+        <div className="App">
           <h2>Add New Book</h2>
           <div className="new-book-form">
             <label>ISBN: </label><TextBox value={this.state.newISBN} change={this.handleChangeNewBookISBN} />
@@ -66,12 +69,14 @@ class App extends Component {
           <div>
             <button onClick={this.addBook}>Add Book</button>
           </div>
-        </div>
+        
         <div>
             <h2>Book List</h2>
             <BookList books={this.state.books} />
         </div>
-      </div>
+        </div>
+        </div>
+     
     );
   }
 }
